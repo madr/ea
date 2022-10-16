@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['emelieanders.one', 'localhost']
 
+CSRF_TRUSTED_ORIGINS = ['https://emelieanders.one', 'http://localhost']
 
 # Application definition
 

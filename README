@@ -1,12 +1,22 @@
-Deployment:
+## Deployment
 
-    1. Build container using docker build .
-    2. scp/sftp file into ea user dir in production
+This Docker image is built, pushed and published automatically on Github Packages, using Github actions. **Only on main branch**.
 
-To start in prod:
+### Start in prod
 
-    1. Stop the running container.
-    2. Start the new container: docker run --name ea -it -p 13371:13371 -v eadbbackup:/app/data
-    3. Optional: remove the old container.
+First: pull latest container
 
-Run docker inspect ea to see the ea backup file path.
+    docker pull ghcr.io/madr/ea:main
+
+Stop the running container:
+
+    docker stop ea
+    docker rm ea
+
+Start new one by:
+
+    ./ea-start.sh
+
+## Backups
+
+A crontab is making backup of the database every 30th minute.

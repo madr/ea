@@ -1,6 +1,8 @@
 __pycache__
 venv
 .git
+.github
 .gitignore
 README
 todo.txt
+*.sqlite3
