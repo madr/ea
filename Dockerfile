@@ -21,4 +21,4 @@ FROM db AS finished
 EXPOSE 13371/tcp
 EXPOSE 13371/udp
 
-CMD ./manage.py runserver 0.0.0.0:13371
+CMD waitress-serve --port=13371 ea:wsgi.application
