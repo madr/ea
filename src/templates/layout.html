@@ -15,7 +15,9 @@
       }
 
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
         margin: 0;
       }
 
@@ -26,7 +28,7 @@
         flex-direction: row;
         align-items: center;
       }
-      
+
       a {
         color: gold;
       }
@@ -35,8 +37,9 @@
         text-align: center;
       }
 
-      h2, h3, h4 {
-        
+      h2,
+      h3,
+      h4 {
       }
 
       nav > ul {
@@ -59,7 +62,7 @@
       }
 
       .placeholder {
-        background-color: rgba(255,255,255,0.1);
+        background-color: rgba(255, 255, 255, 0.1);
         display: block;
       }
     </style>
@@ -67,6 +70,6 @@
   <body>
     {% include '_header.html' %}
     <main>{% block content %}{% endblock content %}</main>
-    {% include '_footer.html' %}
+    {% include '_form.html' with f=rvspform %} {% include '_footer.html' %}
   </body>
 </html>

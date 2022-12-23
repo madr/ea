@@ -1,0 +1,64 @@
+<form method="post" action="{% url "home" %}">
+  {% csrf_token %}
+
+  <label for="{{f.name.id_for_label}}">
+    <div>{{ f.name.label }}</div>
+    {{ f.name }}
+  </label>
+
+  <label for="{{f.email.id_for_label}}">
+    <div>{{ f.email.label }}</div>
+    {{ f.email }}
+    <i>{{ f.email.help_text }}</i>
+  </label>
+
+  <label for="{{f.phone.id_for_label}}">
+    <div>{{ f.phone.label }}</div>
+    {{ f.phone }}
+    <i>{{ f.phone.help_text }}</i>
+  </label>
+
+  <fieldset>
+    <legend>{{ f.is_coming.label }}</legend>
+    {{ f.is_coming }}
+  </fieldset>
+
+  <fieldset>
+    <legend>{{ f.is_partying.label }}</legend>
+    {{ f.is_partying }}
+  </fieldset>
+
+  <label for="{{f.people_count.id_for_label}}">
+    <div>{{ f.people_count.label }}</div>
+    {{ f.people_count }}
+  </label>
+
+  <label for="{{f.children_count.id_for_label}}">
+    <div>{{ f.children_count.label }}</div>
+    {{ f.children_count }}
+  </label>
+
+  <label for="{{f.diet.id_for_label}}">
+    <div>{{ f.diet.label }}</div>
+    {{ f.diet }}
+  </label>
+
+  <fieldset>
+    <legend>{{ f.camping.label }}</legend>
+    {{ f.camping }}
+  </fieldset>
+
+  <label for="{{f.note.id_for_label}}">
+    <div>{{ f.note.label }}</div>
+    {{ f.note }}
+  </label>
+
+  <label for="{{f.consent.id_for_label}}">
+    <div>{{ f.consent.label }}</div>
+    {{ f.consent }}
+  </label>
+
+  <div>
+    <button type="submit">Skicka svar</button>
+  </div>
+</form>
