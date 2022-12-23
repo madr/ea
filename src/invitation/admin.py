@@ -8,6 +8,11 @@ def make_verified(modeladmin, request, queryset):
 
 class InvitationResponseAdmin(admin.ModelAdmin):
     list_display = ('name', 'count', 'ceremony', 'party', 'accommodation', 'acknowledged')
+    list_filter = (
+        'is_coming', 
+        'is_partying',
+        'verified', 
+    )
     ordering = ("-id", "-people_count")
     actions = [make_verified]
     readonly_fields = (
