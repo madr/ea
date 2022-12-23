@@ -7,7 +7,7 @@ def home(request):
     if request.method == "POST":
         if form.is_valid():
             form.save()
-            return redirect(success, success=True)
+            return redirect("/?success=1")
     return render(
         request,
         "invitation/home.html",

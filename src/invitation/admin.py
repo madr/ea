@@ -39,7 +39,9 @@ class InvitationResponseAdmin(admin.ModelAdmin):
 
     @admin.display(description=_("Antal"))
     def count(self, obj):
-        return "%s (%s)" % (obj.people_count + obj.children_count, obj.children_count)
+        pc = obj.people_count if obj.people_count else 0
+        cc = obj.children_count if obj.children_count else 0
+        return "%s (%s)" % (pc + cc, cc)
 
     @admin.display(description=_("Vigseln?"))
     def ceremony(self, obj):
