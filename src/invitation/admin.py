@@ -2,9 +2,14 @@ from django.contrib import admin
 from django.utils.translation import gettext as _
 from .models import InvitationResponse
 
+@admin.action(description='Mark selected as verified (mail confirmation has been sent)')
+def make_verified(modeladmin, request, queryset):
+    queryset.update(verified=True)
+
 class InvitationResponseAdmin(admin.ModelAdmin):
     list_display = ('name', 'count', 'ceremony', 'party', 'accommodation', 'acknowledged')
     ordering = ("-id", "-people_count")
+    actions = [make_verified]
     readonly_fields = (
         'is_coming',
         'is_partying',
