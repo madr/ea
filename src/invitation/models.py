@@ -23,14 +23,14 @@ class InvitationResponse(models.Model):
     email = models.EmailField(_("E-postadress"), help_text="För bekräftelse/kvittens")
     phone = models.IntegerField(_("Telefonnummer"), help_text="För bekräftelse/kvittens")
     is_coming = models.CharField(_("Kommer ni på bröllopet?"), max_length=4, choices=COMING_CHOICES.items())
-    is_partying = models.CharField(_("Stannar ni till middagen?"), max_length=4, choices=PARTY_CHOICES.items())
-    people_count = models.SmallIntegerField(_("Antal personer"))
-    children_count = models.SmallIntegerField(_("Varav barn"))
-    diet = models.TextField(_("Specialkost"))
+    is_partying = models.CharField(_("Stannar ni till middagen?"), max_length=4, choices=PARTY_CHOICES.items(), blank=True)
+    people_count = models.SmallIntegerField(_("Antal personer"), default=0)
+    children_count = models.SmallIntegerField(_("Antal barn"), default=0)
+    diet = models.TextField(_("Specialkost"), blank=True)
     camping = models.CharField(_("Campar ni vid Österå Bystuga?"), max_length=4, choices=CAMPING_CHOICES.items())
-    note = models.TextField(_("Övrig kommentar"))
+    note = models.TextField(_("Övrig kommentar"), blank=True)
     consent = models.BooleanField(_("Ja, brudparet får spara mina uppgifter fram tills juli 2023 för att skicka information om bröllopet"))
-    verified = models.BooleanField(_("Kvittens skickad"))
+    verified = models.BooleanField(_("Kvittens skickad"), default=False)
     
     class Meta:
         verbose_name = _("Svar på inbjudan")
@@ -38,6 +38,3 @@ class InvitationResponse(models.Model):
 
     def __str__(self):
         return self.name
-
-    def get_absolute_url(self):
-        return reverse("InvitationResponse_detail", kwargs={"pk": self.pk})
