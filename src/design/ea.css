@@ -153,6 +153,12 @@ h1 i {
   background-size: cover;
   background-position: center;
   height: 40vw;
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0,
+    rgba(0, 0, 0, 0.75) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
   mask-image: linear-gradient(
     180deg,
     rgba(0, 0, 0, 1) 0,
