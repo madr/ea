@@ -1,5 +1,5 @@
 from django.db import models
-from django.forms import ModelForm, RadioSelect
+from django.forms import ModelForm, RadioSelect, ValidationError
 from django.utils.translation import gettext as _
 
 COMING_CHOICES = {
@@ -71,3 +71,9 @@ class RVSPForm(ModelForm):
             "is_partying": RadioSelect,
             "camping": RadioSelect,
         }
+    
+    def clean_consent(self):
+        consent = self.cleaned_data.get('consent')
+        if not consent:
+            raise ValidationError(_("Obligatoriskt fält"))
+        return consent
