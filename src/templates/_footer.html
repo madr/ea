@@ -1,14 +1,44 @@
-<footer>
+<footer class="column">
   <h2>Kontakt</h2>
   <div>
-    Emelie & Anders, Herrhagsvägen 53, 791 76 Falun, Sweden
+    Emelie & Anders <br />
+    Herrhagsvägen 53 <br />
+    791 76 Falun
   </div>
   <div>
-    Telefon:<br>
-    Emelie - XXXXXXXX<br>
-    Anders - 0702 - 16 96 45
+    Telefon:<br />
+    Emelie - <a href="tel:+46705737227">070 573 72 27</a><br />
+    Anders - <a href="tel:+46702169645">070 216 96 45</a>
   </div>
-  <div>
-    hej@emelieanders.one
-  </div>
+  <div><a href="mailto:yttan@fastmail.se">yttan@fastmail.se</a></div>
 </footer>
+<script>
+  "use strict";
+
+  (function (scope) {
+    const [d, h, m, s] = scope.querySelectorAll("[data-countdown] b");
+    const timestamp = new Date("2023-07-01T14:30:00").getTime();
+
+    function rem(diff, divisor) {
+      return [Math.ceil(diff / divisor), diff % divisor];
+    }
+
+    function countdown() {
+      const diff = timestamp - Date.now();
+
+      const [valueD, remD] = rem(diff, 60 * 60 * 24 * 1000);
+      d.innerHTML = valueD;
+
+      const [valueH, remH] = rem(remD, 60 * 60 * 1000);
+      h.innerHTML = valueH;
+
+      const [valueM, valueS] = rem(remH, 60 * 1000);
+      m.innerHTML = valueM;
+      s.innerHTML = Math.ceil(valueS / 1000);
+
+      setTimeout(countdown, 1000);
+    }
+
+    countdown();
+  })(document);
+</script>

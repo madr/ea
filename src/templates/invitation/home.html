@@ -1,188 +1,233 @@
-{% extends 'layout.html' %}
-{% block content %}
-<h1 id="welcome">Välkomna till vårt bröllop!</h1>
+{% extends 'layout.html' %} {% load static %} {% block content %}
+<i class="fade"></i>
+
+{% if success %}
+<h1 id="welcome">Tack!</h1>
+<p class="align-center">Vi återkommer med en bekräftelse inom kort.</p>
+{%else%}
+<h1 id="welcome">Välkomna <i>till vårt</i> bröllop!</h1>
+
+<div class="align-center">
+  <dl data-countdown>
+    <dt>Wedding Countdown</dt>
+    <dd><b>0</b> dgr</dd>
+    <dd><b>0</b> tmr</dd>
+    <dd><b>0</b> min</dd>
+    <dd><b>0</b> sek</dd>
+  </dl>
+
+  <a class="rvsp" href="#rvsp">OSA</a>
+</div>
 
 <div class="pair">
-    <div>
-    <big>1/7 2023</big>
+  <div>
+    <big class="hd">1 juli 2023</big>
 
-<p>Den 14 mars 2021 förlovade vi oss på Galgberget i Falun. 
-Nu har det äntligen blivit dags för bröllop och vi hoppas 
-att ni vill dela dagen med oss!</p>
+    <p>
+      Den 14 mars 2021 förlovade vi oss på Galgberget i Falun. Nu har det
+      äntligen blivit dags för bröllop och vi hoppas att ni vill dela dagen med
+      oss!
+    </p>
+  </div>
+  <figure>
+    <img src="{% static "bilder/20200707_131822.jpg" %}" alt="Anders och Emelie"
+    />
+  </figure>
 </div>
-<i class="placeholder" style="height:20em"></i>
+
+<div class="pair">
+  <h2 id="information">Information</h2>
 </div>
 
-<h2 id="information">Information</h2>
-
-<p>Hoppa direkt till information om:
-    <a href="#location">Plats</a>,
-    <a href="#ceremony">Vigsel</a>,
-    <a href="#party">Bröllopsfest</a>,
-    <a href="#speaks">Tal</a>,
-    <a href="#dresscode">Klädsel</a>,
-    <a href="#kids">Barn</a>,
-    <a href="#transportation-accommodations">Boende</a>,
-    <a href="#photographer">Fotograf</a> eller
-    <a href="#gifts">Presenter</a>.
+<p class="section-nav">
+  Hoppa direkt till information om: <a href="#location">Plats</a>,
+  <a href="#ceremony">Vigsel</a>, <a href="#party">Bröllopsfest</a>,
+  <a href="#speaks">Tal</a>, <a href="#dresscode">Klädsel</a>,
+  <a href="#kids">Barn</a>, <a href="#transportation-accommodations">Boende</a>,
+  <a href="#photographer">Fotograf</a> eller <a href="#gifts">Presenter</a>.
 </p>
 
-
-<div class="pair"><div>
-<h3 id="location">Plats</h3>
-Österå Bystuga
-Adress: Österå 95, 791 91 Falun
-</div>
-
-<i class="placeholder" style="height:20em"></i>
-</div>
-
-
 <div class="pair">
-    <i class="placeholder" style="height:20em"></i>
-    <div>
-<h3 id="ceremony">Vigsel</h3>
+  <div>
+    <h3 id="location">Plats</h3>
+    <p><strong>Österå Bystuga</strong></p>
 
-<p>Samling från 14.30 på parkeringen vid Österå Bystuga. 
-    Gemensam promenad 14:50 till vigselplatsen. Vigseln startar 
-    klockan 15 och kommer att ske utomhus under bar himmel. 
-    Vid regn kan det därför vara bra att ha med ett paraply 
-    eller en regnjacka.
-</p>
+    <p>Adress: Österå 95, 791 91 Falun</p>
 
-</div></div>
+    <a href="geo:60.6624214,15.6223954" target="_blank">Öppna i kart-app</a>
+  </div>
 
-
-<div class="pair">
-    <div>
-
-<h3 id="party">Bröllopsfest</h3>
-
-<p>Efter vigseln blir det tårta, kaffe och mingel på trädgården 
-utanför bystugan. Vid 18 tiden fortsätter kvällen med middag, dans
-och fest i bystugan!</p>
-
-</div>    <i class="placeholder" style="height:20em"></i>
-</div>
-
-
-<div class="pair">
-    <i class="placeholder" style="height:20em"></i>
-    <div>
-
-<h3 id="speaks">Tal</h3>
-
-<p>Om du vill hålla tal, spexa eller göra något annat skoj under
-dagen får du gärna anmäla det till vår toastmaster Jane. Har 
-du några frågor om tal och spex är du välkommen att höra av 
-dig till Jane.</p>
-
-<h4>Toastmaster</h4>
-
-<p>
-Jane Doe<br>
-Mejl: jane.doe@gastmail.com<br>
-Telefon: 073-1337001
-</p>
-
-</div>
+  <figure>
+    <img src="{% static "bilder/bystuga.jpg" %}" alt="Österå bystuga, sett från
+    vägen" />
+    <figcaption>
+      Foto: Calle Eklund,
+      <a href="https://sv.wikipedia.org/wiki/%C3%96ster%C3%A5">Wikipedia</a>.
+    </figcaption>
+  </figure>
 </div>
 
 <div class="pair">
-    <div>
+  <figure>
+    <img src="{% static "bilder/20200723_212402.jpg" %}" alt="Emelie och Anders"
+    />
+  </figure>
+  <div>
+    <h3 id="ceremony">Vigsel</h3>
 
-<h3 id="dresscode">Klädsel</h3>
-
-<strong>Kavaj</strong>
-
-<ul>
-<li>För damer innebär det klänning, kjol, byxdress eller dräkt.
-<li>För herrar innebär det kostym. Valfri färg på skjorta och kavaj.
-</ul>
-
-</div>
-<i class="placeholder" style="height:20em"></i>
-</div>
-
-<div class="pair">
-    <i class="placeholder" style="height:20em"></i>
-    <div>
-
-<h3 id="kids">Barn</h3>
-
-<p>Barn är välkomna att delta på vigseln och efteråt på minglet och 
-lek utomhus.</p>
-
-<p>Middagen och festen är barnanpassad. Bäbisar får delta på middagen 
-under föräldrarnas ansvar. Det finns ett sidorum intill den stora 
-lokalen i bystugan, där det går att placera vagn och vara ifred.
-</p>
-
-</div>
+    <p>
+      Samling från 14.30 på parkeringen vid Österå Bystuga. Gemensam promenad
+      14:50 till vigselplatsen. Vigseln startar klockan 15 och kommer att ske
+      utomhus under bar himmel. Vid regn kan det därför vara bra att ha med ett
+      paraply eller en regnjacka.
+    </p>
+  </div>
 </div>
 
 <div class="pair">
-    <div>
+  <div>
+    <h3 id="party">Bröllopsfest</h3>
 
-
-<h3 id="transportation-accommodations">Boende & Transport</h3>
-
-<h4>Boende</h4>
-
-<p>Det är 8 km in till Falun, där finns det hotell och vandrarhem</p>
-
-<p>Det finns plats för några husvagnar som kan stå på parkeringen 
-vid bystugan samt några tältplatser på gräsmattan intill bystugan. 
-Anmäl husvagnsplats eller tältplats i OSA svar längst ner på sidan.</p>
-
-<h4>Resa/transport</h4>
-
-<p>Det kommer att åka flera bilar från Falun ut till Österå Bystuga, 
-där det kan finnas flats att åka med. Om du inte vet hur du ska ta 
-dig ut, hör gärna av dig till oss så kan vi hjälpa dig. </p>
-
-<p>På natten finns det några nyktra chaufförer som kör in till Falun, 
-där några kan haka på. I övrigt får vi gå ihop och beställa taxi. 
-Vill du åka hem en specifik tid behöver ni boka dagen innan. </p>
-
-<p>Några nummer till taxibolag som kör ut till Österå Bystuga: </p>
-
-<ul>
-    <li>Koppartaxi AB: 023-630 00 
-    <li>Falan Taxi: 070-019 13 14
-    <li>TaxiKurir Falun: 023-15300
-</ul>
-
-    </div>
-</div>
-<div class="pair">
-    <div>
-
-
-<h3 id="photographer">Fotograf</h3>
-
-<strong>Jane Doe</strong>
-
-Kontakt<br>
-janedoe.com
-</div>
+    <p>
+      Efter vigseln kommer brudparet att fotograferas, under tiden kommer ni
+      gäster att få tillfälle att mingla, prata och gå tipspromenad. Under tiden
+      serveras alkoholfri dryck och snacks. Middag serveras sedan vid 17:30.
+    </p>
+  </div>
+  <figure>
+    <img src="{% static "bilder/party.jpg" %}" alt="middagsbord" />
+  </figure>
 </div>
 
 <div class="pair">
-    <div>
+  <figure><img src="{% static "bilder/salut.jpg" %}" alt="skål" /></figure>
+  <div>
+    <h3 id="speaks">Tal</h3>
 
+    <p>
+      Om du vill hålla tal, spexa eller göra något annat skoj under dagen får du
+      gärna anmäla det till vår toastmaster Lisa . Har du några frågor om tal
+      och spex är du välkommen att höra av dig till Lisa.
+    </p>
 
-<h3 id="gifts">Presenter</h3>
+    <h4>Toastmaster</h4>
 
-<p>Vi önskar inga presenter. Vi blir som gladast av er närvaro!</p>
-
-    </div>
+    <p>
+      Lisa From<br />
+      Mejl:
+      <a href="mailto:lisa.c.from@gmail.com">lisa.c.from@gmail.com</a><br />
+      Telefon: <a href="tel:+46703876532">070 387 65 32</a>
+    </p>
+  </div>
 </div>
 
-<h2 id="rvsp">OSA 1/4</h2>
+<div class="pair">
+  <div>
+    <h3 id="dresscode">Klädsel</h3>
 
-<p>OSA till oss genom att fylla i formuläret. OSA senast 1 april.</p>
+    <p>
+      <strong>Mörk kostym</strong>
+    </p>
 
-<p>Ange namn, eventuell specialkost, om du önskar campingplats och 
-om du planerar att enbart delta på någon del av dagen.</p>
-{% endblock content %}
+    <ul>
+      <li>För damer innebär det klänning, kjol, byxdress eller dräkt.</li>
+      <li>För herrar innebär det kostym. Valfri färg på skjorta och kavaj.</li>
+    </ul>
+    <p>
+      För tips kring val av klädsel, se
+      <a href="http://www.kladkoder.nu/mork-kostym/">denna klädkodsguide</a>
+    </p>
+  </div>
+  <figure>
+    <img src="{% static "bilder/dresscode" %}.jpg" alt="klädhängare med
+    festkläder" />
+  </figure>
+</div>
+
+<div class="pair">
+  <figure>
+    <img src="{% static "bilder/barn.jpg" %}" alt="familjehänder" />
+  </figure>
+  <div>
+    <h3 id="kids">Barn</h3>
+
+    <p>
+      Barn är välkomna att delta på vigseln och efteråt på minglet och lek
+      utomhus.
+    </p>
+
+    <p>
+      Middagen och festen är barnanpassad. Bebisar får delta på middagen under
+      föräldrarnas ansvar. Det finns ett sidorum intill den stora lokalen i
+      bystugan, där det går att placera vagn och vara ifred.
+    </p>
+
+    <p>Observera att festen inte är alkoholfri.</p>
+  </div>
+</div>
+
+<div class="pair">
+  <h3 id="transportation-accommodations">Boende & Transport</h3>
+</div>
+<div class="pair align-top">
+  <div>
+    <h4>Boende</h4>
+
+    <p>Det är 8 km in till Falun, där finns det hotell och vandrarhem.</p>
+
+    <p>
+      Det finns plats för några husvagnar som kan stå på parkeringen vid
+      bystugan samt några tältplatser på gräsmattan intill bystugan. Anmäl
+      husvagnsplats eller tältplats i OSA svar längst ner på sidan.
+    </p>
+  </div>
+  <div>
+    <h4>Resa/transport</h4>
+
+    <p>
+      Det kommer att åka flera bilar via väg 50 och via Borlänge till Österå
+      Bystuga, där det kan finnas flats att åka med. Om du inte vet hur du ska
+      ta dig ut, hör gärna av dig till oss så kan vi hjälpa dig.
+    </p>
+
+    <p>
+      På natten finns det några nyktra chaufförer som kör in till Falun, där
+      några kan haka på. I övrigt får vi gå ihop och beställa taxi. Vill du åka
+      hem en specifik tid behöver ni boka dagen innan.
+    </p>
+
+    <p>Några nummer till taxibolag som kör ut till Österå Bystuga:</p>
+
+    <ul>
+      <li>Koppartaxi AB: <a href="tel:+462363000">023-630 00</a></li>
+      <li>TaxiKurir Falun: <a href="tel:+462315300">023-15300</a></li>
+      <li>Falan Taxi: <a href="tel:+46700191314">070-019 13 14</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="pair">
+  <div>
+    <h3 id="photographer">Fotograf</h3>
+
+    <p>
+      <strong>Camilla Dahlin</strong><br />
+      Adora Foto
+    </p>
+    <a href="http://adorafoto.com">www.adorafoto.com</a>
+  </div>
+</div>
+
+<div class="pair">
+  <div>
+    <h3 id="gifts">Presenter</h3>
+
+    <p>
+      Vi önskar inga presenter. Vi blir som gladast av er närvaro! För den som
+      vill så tänk gärna på Världsnaturfonden, UNICEF eller UNHCR.
+    </p>
+  </div>
+  <img src="{% static "bilder/20200722_" %}165202.jpg" alt="Emelie och Anders"
+  />
+</div>
+{% endif %} {% endblock content %}
