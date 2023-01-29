@@ -1,75 +1,15 @@
+{% load static %}
 <html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Anders & Emelie Englöf Ytterström</title>
     <meta name="robots" content="noindex,nofollow" />
-    <style>
-      :root {
-        --padding: 1em;
-      }
-
-      html {
-        background-color: #333;
-        color: #eee;
-      }
-
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-          "Segoe UI Symbol";
-        margin: 0;
-      }
-
-      header {
-        padding: var(--padding);
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-        align-items: center;
-      }
-
-      a {
-        color: gold;
-      }
-
-      h1 {
-        text-align: center;
-      }
-
-      h2,
-      h3,
-      h4 {
-      }
-
-      nav > ul {
-        list-style: none;
-        display: flex;
-        gap: var(--padding);
-      }
-
-      main {
-        padding: var(--padding);
-        max-width: 40em;
-        margin: 0 auto;
-      }
-
-      .pair {
-        align-items: center;
-        display: grid;
-        gap: var(--padding);
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .placeholder {
-        background-color: rgba(255, 255, 255, 0.1);
-        display: block;
-      }
-    </style>
+    <link rel="stylesheet" href="{% static 'ea.css' %}" />
   </head>
   <body>
     {% include '_header.html' %}
-    <main>{% block content %}{% endblock content %}</main>
+    <main class="column">{% block content %}{% endblock content %}</main>
     {% include '_form.html' with f=rvspform %} {% include '_footer.html' %}
   </body>
 </html>
