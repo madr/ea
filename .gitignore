@@ -3,3 +3,4 @@ venv
 todo.txt
 *.sqlite3
 .vscode
+static

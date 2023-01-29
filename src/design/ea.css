@@ -231,6 +231,7 @@ form i {
 
 input {
   font-size: 1.5em;
+  max-width: 90%;
 }
 
 fieldset {

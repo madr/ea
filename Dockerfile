@@ -14,7 +14,7 @@ FROM source AS db
 
 RUN mkdir -p /app/data
 VOLUME /app/data
-RUN ./manage.py migrate
+RUN ./manage.py collectstatic --noinput
 
 FROM db AS finished
 

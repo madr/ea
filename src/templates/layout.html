@@ -10,7 +10,7 @@
   <body>
     {% include '_header.html' %}
     <main class="column">{% block content %}{% endblock content %}</main>
-    {% if not success %} {% include '_form.html' with f=rvspform %} {% include
-    '_footer.html' %} {% endif %}
+    {% if not success %} {% include '_form.html' with f=rvspform %} {% endif %}
+    {% include '_footer.html' %}
   </body>
 </html>
