@@ -1,5 +1,10 @@
 {% extends 'layout.html' %} {% load static %} {% block content %}
 <i class="fade"></i>
+
+{% if success %}
+<h1 id="welcome">Tack!</h1>
+<p class="align-center">Vi återkommer med en bekräftelse inom kort.</p>
+{%else%}
 <h1 id="welcome">Välkomna <i>till vårt</i> bröllop!</h1>
 
 <div class="align-center">
@@ -225,4 +230,4 @@
   <img src="{% static "bilder/20200722_" %}165202.jpg" alt="Emelie och Anders"
   />
 </div>
-{% endblock content %}
+{% endif %} {% endblock content %}

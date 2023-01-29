@@ -13,5 +13,6 @@ def home(request):
         "invitation/home.html",
         context={
             "rvspform": form,
+            "success": "success" in request.GET
         },
     )
