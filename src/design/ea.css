@@ -1,49 +1,189 @@
+@font-face {
+  font-family: "metal-macabre";
+  src: local("Metal Macabre"), url("metal-macabre.ttf");
+}
+
+@font-face {
+  font-family: "heatwerk";
+  src: local("Heatwerk"), url("heatwerk.otf");
+}
+
 :root {
-  --padding: 1em;
+  --padding: 4em;
+  --accent: mediumvioletred;
+  --accent: rgb(255, 0, 212);
 }
 
 html {
-  background-color: #333;
+  background-color: #222;
   color: #eee;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Noto sans", "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   margin: 0;
 }
 
 header {
-  padding: var(--padding);
   display: flex;
-  justify-content: space-between;
-  flex-direction: row;
   align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 3.5em 0 1em;
+  text-align: center;
+  background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(
+      #1d1d1d 25%,
+      #1a1a1a 25%,
+      #1a1a1a 50%,
+      transparent 50%,
+      transparent 75%,
+      #242424 75%,
+      #242424
+    );
+  background-color: #131313;
+  background-size: 20px 20px;
+  border-bottom: 1px solid #3f3f3f;
+}
+
+small {
+  text-transform: uppercase;
+  color: #aaa;
+  transform: translateX(-4em) translateY(-0.5em);
+  font-size: 0.7em;
+}
+
+figure {
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  aspect-ratio: 1 / 1;
+}
+
+figcaption {
+  text-align: right;
+  font-size: 0.8em;
+  font-style: italic;
+  padding: 0.5em 0;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
 }
 
 a {
   color: gold;
 }
 
+button,
+.rvsp {
+  background-image: linear-gradient(magenta, mediumvioletred);
+  text-decoration: none;
+  padding: 1em;
+  border-radius: 0.5em;
+  text-transform: uppercase;
+  font-size: 1.25em;
+  display: inline-block;
+  text-align: center;
+  border: 0.25em solid black;
+  color: #000;
+  text-shadow: #fff 1px 1px 1px;
+  transition: all 0.33s ease-out;
+  line-height: 1;
+  opacity: 0.8;
+  font-weight: bold;
+}
+
+.rvsp:hover,
+.rvsp:focus {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.logo {
+  line-height: 1;
+  color: #111;
+  font-family: "metal-macabre", sans-serif;
+  font-size: 2.5em;
+  -webkit-text-stroke: 2px white;
+  font-weight: bold;
+}
+
+.logo > i {
+  font-size: 0.66em;
+  color: var(--accent);
+  -webkit-text-stroke: 0px;
+  font-style: normal;
+}
+
 h1 {
   text-align: center;
+  font-family: "heatwerk", sans-serif;
+  font-weight: normal;
+  font-size: 8em;
+  color: var(--accent);
+  line-height: 1;
+  transform: rotate(-3deg);
+}
+
+h1 i {
+  font-size: 0.5em;
+  display: block;
+  font-style: normal;
+  padding-bottom: 0.25em;
+  transform: translateX(1em);
+}
+
+.fade {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-image: url(bilder/20200723_212412.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 40vw;
+  mask-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0,
+    rgba(0, 0, 0, 0.75) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 h2,
 h3,
-h4 {
-}
-
-nav > ul {
-  list-style: none;
-  display: flex;
-  gap: var(--padding);
+.hd {
+  font-family: "heatwerk", sans-serif;
+  font-weight: normal;
+  font-size: 3em;
+  color: var(--accent);
+  text-transform: uppercase;
 }
 
 main {
-  padding: var(--padding);
-  max-width: 40em;
-  margin: 0 auto;
+  background: radial-gradient(black 15%, transparent 16%) 0 0,
+    radial-gradient(black 15%, transparent 16%) 8px 8px,
+    radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px,
+    radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
+  background-color: #282828;
+  background-size: 16px 16px;
+  font-size: large;
+}
+
+.column {
+  position: relative;
+  padding: var(--padding) calc(50% - 30em);
 }
 
 .pair {
@@ -51,9 +191,134 @@ main {
   display: grid;
   gap: var(--padding);
   grid-template-columns: 1fr 1fr;
+  margin: 5em 0;
+}
+
+.align-top {
+  align-items: flex-start;
+}
+
+.align-center {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 4em;
+  flex-direction: row;
 }
 
 .placeholder {
   background-color: rgba(255, 255, 255, 0.1);
   display: block;
+}
+
+.rvsp-form {
+  background-color: #f3f3f3;
+  color: #444;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+form i {
+  font-size: 0.8em;
+  display: block;
+  padding-top: 0.5em;
+}
+
+input {
+  font-size: 1.5em;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+}
+
+legend {
+  margin: 0;
+  font-weight: bold;
+  padding: 0 0 0.25em;
+}
+
+.section-nav {
+  background-color: rgba(0, 0, 0, 0.66);
+  padding: 1.5em;
+  border-radius: 8px;
+}
+
+footer {
+  display: flex;
+  gap: var(--padding);
+  align-items: center;
+  justify-content: space-between;
+}
+
+[data-countdown] {
+  margin: 0;
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.5em 1em;
+  text-align: center;
+  font-size: 1.5em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+[data-countdown] dt,
+[data-countdown] b {
+  font-family: "Heatwerk", sans-serif;
+  color: var(--accent);
+}
+
+[data-countdown] dt {
+  grid-column: 1 / 5;
+  font-size: 1.1em;
+  color: #ccc;
+}
+
+[data-countdown] b {
+  font-size: 2em;
+  display: block;
+}
+
+[data-countdown] dd {
+  font-size: 0.66em;
+  margin: 0;
+  color: #aaa;
+}
+
+@media (max-width: 500px) {
+  .pair {
+    grid-template-columns: 1fr;
+    gap: 2em;
+    padding: 1em;
+    margin: 1em 0;
+  }
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .align-center {
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  h1 {
+    font-size: 5.5em;
+  }
+
+  small {
+    display: none;
+  }
+
+  footer {
+    flex-direction: column;
+  }
 }
