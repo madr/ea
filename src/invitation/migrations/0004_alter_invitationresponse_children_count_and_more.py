@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("invitation", "0003_alter_invitationresponse_camping_and_more"),
     ]
