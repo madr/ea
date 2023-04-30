@@ -29,7 +29,6 @@ class InvitationResponseAdmin(admin.ModelAdmin):
         "is_partying",
         "phone",
         "email",
-        "diet",
         "note",
         "consent",
         "verified",
