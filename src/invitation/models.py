@@ -71,9 +71,9 @@ class RVSPForm(ModelForm):
             "is_partying": RadioSelect,
             "camping": RadioSelect,
         }
-    
+
     def clean_consent(self):
-        consent = self.cleaned_data.get('consent')
+        consent = self.cleaned_data.get("consent")
         if not consent:
             raise ValidationError(_("Obligatoriskt fält"))
         return consent

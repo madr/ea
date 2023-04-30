@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("invitation", "0002_alter_invitationresponse_children_count_and_more"),
     ]

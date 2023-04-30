@@ -21,4 +21,5 @@ from invitation import views as invitation_views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", invitation_views.home, name="home"),
+    path("guests.csv", invitation_views.guests, name="guests"),
 ]
