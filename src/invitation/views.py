@@ -38,7 +38,7 @@ def guests(request):
             + [
                 ",".join(
                     map(
-                        str,
+                        lambda s: f'"{str(s)}"',
                         [
                             guest.name,
                             guest.email,
