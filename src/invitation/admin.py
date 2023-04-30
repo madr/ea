@@ -29,8 +29,6 @@ class InvitationResponseAdmin(admin.ModelAdmin):
         "is_partying",
         "phone",
         "email",
-        "people_count",
-        "children_count",
         "diet",
         "note",
         "consent",
