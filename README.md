@@ -4,19 +4,33 @@ This Docker image is built, pushed and published automatically on Github Package
 
 ### Start in prod
 
-First: pull latest container
-
-    docker pull ghcr.io/madr/ea:main
-
-Stop the running container:
-
-    docker stop ea
-    docker rm ea
-
 Start new one by:
 
     ./ea-start.sh
 
-## Backups
+Fetch and update existing by:
+
+    ./ea-redeploy.sh
+
+### Backups
 
 A crontab is making backup of the database every 30th minute.
+
+## Local development
+
+Initial setup, using `virtualenv`, only needed once:
+
+    virtualenv venv
+    . venv/bin/activate
+    pip install -r requirements.txt
+
+Initial django setup, only needed once:
+
+    cd src
+    mkdir data
+    ./manage.py migrate
+    ./manage.py createsuperuser
+    ./manage.py runserver
+
+Local dev is now available at http://localhost:8000, and the admin
+interface is available at http://localhost:8000/admin/.
